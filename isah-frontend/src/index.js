@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
 import { createBrowserHistory } from 'history';
+import {API_URL_PROD} from './credentials.js'
 
 const history = createBrowserHistory();
 
@@ -21,7 +22,7 @@ function getCookie(name) {
 }
 
 if(process.env.NODE_ENV === 'production') {
-  axios.defaults.baseURL = 'https://2g8od2nal7.execute-api.ap-south-1.amazonaws.com/prod';
+  axios.defaults.baseURL = API_URL_PROD;
 }
 axios.defaults.headers.common['Authorization'] = getCookie('isah_id');
 
