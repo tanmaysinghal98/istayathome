@@ -1,0 +1,20 @@
+.dropbox {
+    padding: 1em;
+    border: black dashed 0.25em;
+    height: 10em;
+    width: 100%;
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 700;
+    text-align: center;
+    display: table;
+    font-size: 1.2em;
+}
+
+.drag-text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.image-preview {
+    text-align: center;
+}

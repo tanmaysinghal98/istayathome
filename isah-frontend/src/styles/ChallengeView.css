@@ -1,0 +1,40 @@
+.challenge-box {
+    height: 7.5em;
+    width: auto;
+    border-radius: 0.5em 0.5em 0px 0px;
+    padding: 1.25em;
+    margin: 1.25em 0em 0em;
+}
+
+.challenge-title {
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: white;
+    line-height: 1.2;
+}
+
+.challenge-description {
+    height: 5em;
+    border-radius: 0px 0px 0.5em 0.5em;
+    padding: 1.25em;
+    width: auto;
+    /* border: 5px solid; */
+    /* background-color: white; */
+}
+
+.bottom-number {
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 500;
+    font-size: 1.7em;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.bottom-number-text {
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 500;
+    font-size: 1em;
+    color: white;
+}

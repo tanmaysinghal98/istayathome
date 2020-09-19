@@ -1,0 +1,149 @@
+.button-rounded-black {
+    margin: 0 auto;
+    padding: 0.4375em 1.5em 0.5em;
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    border: 3px solid transparent;
+    border-radius: 2.5em;
+    background-color: black;
+    color: #ffffff;
+}
+
+.button-rounded-black:focus {
+    outline: none;
+}
+
+.button-rounded-black-disabled {
+    margin: 0 auto;
+    padding: 0.4375em 1.5em 0.5em;
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    border: 3px solid transparent;
+    border-radius: 2.5em;
+    background-color:rgb(170, 170, 170);
+    color: #ffffff;
+}
+
+.button-rounded-black-disabled:focus {
+    outline: none;
+}
+
+.button-rounded-white {
+    margin: 0 auto;
+    padding: 0.4375em 1.5em 0.5em;
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    border: 3px solid transparent;
+    border-radius: 2.5em;
+    background-color: white;
+    color: black;
+}
+
+.button-rounded-white:focus {
+    outline: none;
+}
+
+.button-rounded-transparent {
+    margin: 0 auto;
+    padding: 0.4375em 1.5em 0.5em;
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    border: 3px solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2.5em;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.button-rounded-transparent:focus {
+    outline: none;
+}
+
+.button-rounded-transparent:hover {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.h1-black {
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 700;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.h1-white {
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 700;
+    text-align: center;
+    font-size: 2.5em;
+    color: white;
+}
+
+.my-container {
+    margin: 1em;
+}
+
+@media(max-width : 576px) {
+    .h1-black {
+        font-size: 2.25em;
+    }
+    .h1-white {
+        font-size: 2.25em;
+    }
+}
+
+.input-field-large {
+    border: 5px solid #eeeeee;
+    border-radius: 10px;
+    font-size: 1.33em;
+    font-weight: 700;
+    font-family: 'Baloo Paaji 2', cursive;
+    color: black;
+    opacity: 1; /* Firefox */
+    background: transparent;
+    width: 100%;
+    outline: none;
+    padding: 0.5em 0.75em;
+}
+
+.input-field-large:hover {
+    border: 5px solid #000000;
+}
+
+.input-field-large:focus {
+    border: 5px solid #000000;
+    /* outline: none */
+}
+
+.input-field-large::placeholder {
+    color: black;
+    /* outline: none */
+}
+
+.label {
+    font-weight: 700;
+    font-family: 'Baloo Paaji 2', cursive;
+}
+
+.text-large {
+    font-size: 1.3em;
+}
+
+.loading {
+    margin: auto;
+}

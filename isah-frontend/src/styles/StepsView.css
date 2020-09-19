@@ -1,0 +1,29 @@
+.circle {
+    color: white;
+    background: black;
+    position: absolute;
+    border-radius: 0.5em;
+    text-align: center;
+    top: 0.11em;
+    left: 0.11em;
+    height: 1.5em;
+    width: 1.5em;
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 700;
+    vertical-align: middle;
+    font-size: 1.5em;
+}
+
+.steps-box {
+    position: relative;
+    padding: 0.5em 0.5em 0.5em 2.7em;
+    color: white;
+    /* text-align: center; */
+    background: black;
+    border-radius: 0.5em;
+    width: 100%;
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 700;
+    vertical-align: middle;
+    font-size: 1.5em;
+}

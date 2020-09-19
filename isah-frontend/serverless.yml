@@ -1,0 +1,70 @@
+service: isah-frontend
+
+# The `provider` block defines where your service will be deployed
+provider:
+  name: aws
+  runtime: nodejs12.x
+  profile: isah
+  stage: prod
+  region: ap-south-1
+
+custom:
+  siteName: istayathome.in
+  s3Sync:
+    - bucketName: ${self:custom.siteName}
+      localDir: build
+
+resources:
+  Resources:
+    IsahFrontend:
+      Type: AWS::S3::Bucket
+      Properties:
+        AccessControl: PublicRead
+        BucketName: ${self:custom.siteName}
+        WebsiteConfiguration:
+          IndexDocument: index.html
+          RoutingRules:
+          - RoutingRuleCondition:
+              HttpErrorCodeReturnedEquals: '404'
+            RedirectRule:
+              HostName: ${self:custom.siteName}
+              ReplaceKeyPrefixWith: '#!/'
+          - RoutingRuleCondition:
+              HttpErrorCodeReturnedEquals: '403'
+            RedirectRule:
+              HostName: ${self:custom.siteName}
+              ReplaceKeyPrefixWith: '#!/'
+    WWWIsahFrontend:
+      Type: AWS::S3::Bucket
+      Properties:
+        AccessControl: PublicRead
+        BucketName: www.${self:custom.siteName}
+        WebsiteConfiguration:
+          RedirectAllRequestsTo:
+            HostName: ${self:custom.siteName}
+            Protocol: https
+    IsahFrontendS3BucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket:
+          Ref: IsahFrontend
+        PolicyDocument:
+          Statement:
+            - Sid: PublicReadGetObject
+              Effect: Allow
+              Principal: "*"
+              Action:
+              - s3:GetObject
+              Resource:
+                Fn::Join: [
+                  "", [
+                    "arn:aws:s3:::",
+                    {
+                      "Ref": "IsahFrontend"
+                    },
+                    "/*"
+                  ]
+                ]
+
+plugins:
+  - serverless-s3-sync

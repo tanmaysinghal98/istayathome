@@ -1,0 +1,18 @@
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.description-box {
+    padding: 1em;
+}
+
+.description-text {
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1em;
+    line-height: 1.4;
+    font-family: 'Baloo Paaji 2', cursive;
+}

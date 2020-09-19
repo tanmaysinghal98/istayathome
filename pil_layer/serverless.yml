@@ -1,0 +1,19 @@
+service: pil-layer
+
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: isah
+  region: ap-south-1
+  stage: prod
+  timeout: 900
+
+layers:
+  pil:
+    path: PIL
+    CompatibleRuntimes: [
+      "python3.8"
+    ]
+
+

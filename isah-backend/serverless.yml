@@ -1,0 +1,200 @@
+service: isah-backend
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: isah
+  stage: prod
+  region: ap-south-1
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - "Fn::GetAtt": [ UsersTable, Arn ]
+        - "Fn::GetAtt": [ ChallengesTable, Arn ]
+    - Effect: Allow
+      Action:
+        - s3:ListBucket
+        - s3:PutObject
+        - s3:GetObject
+      Resource: 
+        - '*'
+
+  environment:
+    variable1: value1
+
+package:
+#  excludeDevDependencies: false
+#  include:
+  exclude:
+#    - exclude-me.py
+    - a/**
+    - .serverless/*
+    - pyenv.cfg
+    - test_data/**
+    - bin/**
+    - include/**
+    - lib/**
+    - lib64/**
+    - mock/**
+    - local/**
+    - share/**
+    - include/**
+    - lead/node_modules/**
+    - lead/tests/**
+    - test/**
+    - tests/**
+    - _pytest/**
+    - coverage/**
+    - venv/**
+    - sales-assistent/**
+    - node_modules/**
+    - test_data/**
+    - package-lock.json
+    - package.json
+    - __pycache__/**
+    - pylintrc
+    - .venv/**
+
+functions:
+  get-users:
+    handler: handler.get_users
+    layers:
+      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+    events:
+      - http:
+          path: users
+          method: get
+          cors: true
+  update-users:
+    handler: handler.update_users
+    layers:
+      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+    events:
+      - http:
+          path: users
+          method: put
+          cors: true
+  get-challenges:
+    handler: handler.get_challenges
+    layers:
+      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+    events:
+      - http:
+          path: challenges
+          method: get
+          cors: true
+  create-challenges:
+    handler: handler.create_challenge
+    layers:
+      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+    events:
+      - http:
+          path: challenges
+          method: post
+          cors: true
+  get-upload-presigned-url:
+    handler: handler.get_upload_presigned_url
+    layers:
+      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+    events:
+      - http:
+          path: image/upload
+          method: post
+          cors: true
+  get-download-presigned-url:
+    handler: handler.get_download_presigned_url
+    layers:
+      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+    events:
+      - http:
+          path: image/download
+          method: post
+          cors: true
+  submit-challenge:
+    handler: handler.process_image
+    layers:
+      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+    events:
+      - http:
+          path: submit
+          method: post
+          cors: true
+
+resources:
+  Resources:
+    UsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: users
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 3
+          WriteCapacityUnits: 3
+    ChallengesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: challenges
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: N
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 3
+          WriteCapacityUnits: 3
+    RawAchievementImagesBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: isah-raw-achievement-images
+    ProcessedAchievementImagesBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: isah-processed-achievement-images
+        CorsConfiguration:
+          CorsRules:
+            - AllowedHeaders:
+                - '*'
+              AllowedMethods:
+                - GET
+                - PUT
+                - POST
+                - DELETE
+                - HEAD
+              MaxAge: 3000
+              AllowedOrigins:
+                - '*'
+    UserUploadedImagesBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: isah-user-uploaded-images
+        CorsConfiguration:
+          CorsRules:
+            - AllowedHeaders:
+                - '*'
+              AllowedMethods:
+                - GET
+                - PUT
+                - POST
+                - DELETE
+                - HEAD
+              MaxAge: 3000
+              AllowedOrigins:
+                - istayathome.in
+
+plugins:
+  - serverless-python-requirements
