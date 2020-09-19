@@ -10,10 +10,12 @@ I have pushed the Amazon Linux based PIL python3.8 package for convenience. But 
 5. `exit`
 
 
-## Deploy
+## Getting Started
 ### Prerequisite
 - Make sure you have [Serverless](https://www.npmjs.com/package/serverless) installed.
-- AWS Credentials Setup using [AWS CLI](https://pypi.org/project/awscli/)
+- AWS Credentials setup using [AWS CLI](https://pypi.org/project/awscli/)
+
+## Usage
 ### Deployment
 ```zsh
 sls deploy
