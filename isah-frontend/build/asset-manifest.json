@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "https://istayathome.in/static/css/main.5d10b3ff.chunk.css",
+    "main.js": "https://istayathome.in/static/js/main.e1b17891.chunk.js",
+    "main.js.map": "https://istayathome.in/static/js/main.e1b17891.chunk.js.map",
+    "runtime-main.js": "https://istayathome.in/static/js/runtime-main.6e6d9276.js",
+    "runtime-main.js.map": "https://istayathome.in/static/js/runtime-main.6e6d9276.js.map",
+    "static/js/2.38e98d1e.chunk.js": "https://istayathome.in/static/js/2.38e98d1e.chunk.js",
+    "static/js/2.38e98d1e.chunk.js.map": "https://istayathome.in/static/js/2.38e98d1e.chunk.js.map",
+    "index.html": "https://istayathome.in/index.html",
+    "precache-manifest.6efcb1a6dd7bf3455446cd4fe5767dac.js": "https://istayathome.in/precache-manifest.6efcb1a6dd7bf3455446cd4fe5767dac.js",
+    "service-worker.js": "https://istayathome.in/service-worker.js",
+    "static/css/main.5d10b3ff.chunk.css.map": "https://istayathome.in/static/css/main.5d10b3ff.chunk.css.map",
+    "static/js/2.38e98d1e.chunk.js.LICENSE.txt": "https://istayathome.in/static/js/2.38e98d1e.chunk.js.LICENSE.txt",
+    "static/media/full_colored_logo.png": "https://istayathome.in/static/media/full_colored_logo.b98ce243.png",
+    "static/media/full_monochrome_logo_transparent.png": "https://istayathome.in/static/media/full_monochrome_logo_transparent.aceed990.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6e6d9276.js",
+    "static/js/2.38e98d1e.chunk.js",
+    "static/css/main.5d10b3ff.chunk.css",
+    "static/js/main.e1b17891.chunk.js"
+  ]
+}
