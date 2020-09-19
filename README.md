@@ -127,4 +127,4 @@ Project Link: [https://github.com/tanmaysinghal98/istayathome](https://github.co
 [license-url]: https://github.com/tanmaysinghal98/istayathome/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/tanmaysinghal98
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: https://github.com/tanmaysinghal98/istayathome/blob/media/Screenshot%202020-09-20%20at%201.17.22%20AM.png
