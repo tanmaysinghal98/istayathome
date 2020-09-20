@@ -105,12 +105,13 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
-<!-- CONTACT -->
+<!-- CONTACT
 ## Contact
 
 Tanmay Singhal - [@tanmaysinghal98](https://twitter.com/tanmaysinghal98) - tanmaysinghal98@gmail.com
 
 Project Link: [https://github.com/tanmaysinghal98/istayathome](https://github.com/tanmaysinghal98/istayathome)
+-->
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
