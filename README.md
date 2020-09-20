@@ -51,18 +51,40 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://istayathome.in)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
+### Motivation
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+Enthusiasm is more contagious than a virus
+- We need a reason for celebration, specially when we cannot go out
+- Productively utilise time
+- Realistic challenges
+- Sharing enthusiasm
+- Virtually connecting with our buddies for a purpose
+  - Adding a purpose like sharing an innovative challenge
+- Sharing positivity on social media
+  - For example, Ice bucket challenge shared on Instagram
+  
+### Idea
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
+- 📱A webapp platform to showcase a list of challenges
+  - Example of challenges: See your childhood photos, Try old clothes, Create a meme, etc
+- 🔝Users will complete challenges and gain points
+  - Completing a challenge will earn user points
+- 💯Celebratory image as a recognition once challenge is completed
+- 💕Sharing options to share on Social Media and nominate friends
+  - Share and earn more traction, in turn spread good vibes
 
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+### Implementation
+
+- Front end hosted on S3 bucket
+- Get challenges from DynamoDB through API gateway
+- A unique user is created if existing user cookie is not found
+- When image is uploaded, lambda creates another achievement image and stores in S3
+- Same image is returned to UI, as a shareable content
+- User can update personal information on Profile page; User information stored in DynamoDB
+
 
 ### Built With
+
 * [Bootstrap](https://getbootstrap.com)
 * [Serverless Framework](https://serverless.com)
 * [React.js](https://reactjs.org/)
