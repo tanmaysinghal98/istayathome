@@ -3,7 +3,7 @@ service: isah-backend
 provider:
   name: aws
   runtime: python3.8
-  profile: isah
+  profile: personal
   stage: prod
   region: ap-south-1
 
@@ -68,7 +68,7 @@ functions:
   get-users:
     handler: handler.get_users
     layers:
-      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+      - 'arn:aws:lambda:ap-south-1:603276659381:layer:pil:1'
     events:
       - http:
           path: users
@@ -77,7 +77,7 @@ functions:
   update-users:
     handler: handler.update_users
     layers:
-      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+      - 'arn:aws:lambda:ap-south-1:603276659381:layer:pil:1'
     events:
       - http:
           path: users
@@ -86,7 +86,7 @@ functions:
   get-challenges:
     handler: handler.get_challenges
     layers:
-      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+      - 'arn:aws:lambda:ap-south-1:603276659381:layer:pil:1'
     events:
       - http:
           path: challenges
@@ -95,7 +95,7 @@ functions:
   create-challenges:
     handler: handler.create_challenge
     layers:
-      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+      - 'arn:aws:lambda:ap-south-1:603276659381:layer:pil:1'
     events:
       - http:
           path: challenges
@@ -104,7 +104,7 @@ functions:
   get-upload-presigned-url:
     handler: handler.get_upload_presigned_url
     layers:
-      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+      - 'arn:aws:lambda:ap-south-1:603276659381:layer:pil:1'
     events:
       - http:
           path: image/upload
@@ -113,7 +113,7 @@ functions:
   get-download-presigned-url:
     handler: handler.get_download_presigned_url
     layers:
-      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+      - 'arn:aws:lambda:ap-south-1:603276659381:layer:pil:1'
     events:
       - http:
           path: image/download
@@ -122,7 +122,7 @@ functions:
   submit-challenge:
     handler: handler.process_image
     layers:
-      - 'arn:aws:lambda:ap-south-1:702360202415:layer:pil:2'
+      - 'arn:aws:lambda:ap-south-1:603276659381:layer:pil:1'
     events:
       - http:
           path: submit
@@ -194,7 +194,7 @@ resources:
                 - HEAD
               MaxAge: 3000
               AllowedOrigins:
-                - istayathome.in
+                - https://istayathome.in
 
 plugins:
   - serverless-python-requirements

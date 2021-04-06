@@ -1,1 +1,1 @@
-export const API_URL_PROD = 'https://2g8od2nal7.execute-api.ap-south-1.amazonaws.com/prod';
+export const API_URL_PROD = 'https://hemndyiu7h.execute-api.ap-south-1.amazonaws.com/prod';

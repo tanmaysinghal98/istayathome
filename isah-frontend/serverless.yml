@@ -4,7 +4,7 @@ service: isah-frontend
 provider:
   name: aws
   runtime: nodejs12.x
-  profile: isah
+  profile: personal
   stage: prod
   region: ap-south-1
 
